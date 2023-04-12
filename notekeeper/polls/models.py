@@ -16,8 +16,8 @@ class TipoDeNota(models.Model):
 
 class Note(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.CharField(max_length=20000)
+    title = models.CharField(max_length=200,null=True)
+    text = models.CharField(max_length=20000,null=True)
     pub_date = models.DateTimeField("date published")
     type = models.ForeignKey(TipoDeNota, on_delete=models.CASCADE, null=True)
 
